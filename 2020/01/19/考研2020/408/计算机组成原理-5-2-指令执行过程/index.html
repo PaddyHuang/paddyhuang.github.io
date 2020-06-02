@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>计算机组成原理-5-2-指令执行过程 | Polin &amp; Rophen's Corner</title><meta name="description" content="计算机组成原理-5-2-指令执行过程"><meta name="keywords" content="计算机组成原理"><meta name="author" content="Polin Huang,huangblcs@outlook.com"><meta name="copyright" content="Polin Huang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="计算机组成原理-5-2-指令执行过程"><meta name="twitter:description" content="计算机组成原理-5-2-指令执行过程"><meta name="twitter:image" content="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><meta property="og:type" content="article"><meta property="og:title" content="计算机组成原理-5-2-指令执行过程"><meta property="og:url" content="http://www.poro.cool/2020/01/19/考研2020/408/计算机组成原理-5-2-指令执行过程/"><meta property="og:site_name" content="Polin &amp; Rophen's Corner"><meta property="og:description" content="计算机组成原理-5-2-指令执行过程"><meta property="og:image" content="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://www.poro.cool/2020/01/19/考研2020/408/计算机组成原理-5-2-指令执行过程/"><link rel="prev" title="计算机组成原理-4.3-CISC和RISC" href="http://www.poro.cool/2020/01/19/考研2020/408/计算机组成原理-4-3-CISC和RISC/"><link rel="next" title="计算机组成原理-5-3-数据通路的功能和基本结构" href="http://www.poro.cool/2020/01/19/考研2020/408/计算机组成原理-5-3-数据通路的功能和基本结构/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Polin &amp; Rophen's Corner</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> Books</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">82</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">5</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> Books</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">Catalog</div><div class="sidebar-toc__content"><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#blockquote-classblockquote-center52-指令执行过程blockquote"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text"> 5.2-指令执行过程</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#一-单选"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text"> 一、单选</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#22011-假定不采用cache和指令预取技术且机器处于开中断状态则在下列有关指令执行的叙述中错误的是"><span class="toc_mobile_items-number">2.1.</span> <span class="toc_mobile_items-text"> 2.[2011] 假定不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#4-采用dma方式传送数据时每传送一个数据就要占用"><span class="toc_mobile_items-number">2.2.</span> <span class="toc_mobile_items-text"> 4. 采用DMA方式传送数据时，每传送一个数据就要占用（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#6-指令-从主存中读出"><span class="toc_mobile_items-number">2.3.</span> <span class="toc_mobile_items-text"> 6. 指令（ ）从主存中读出。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#9-以下叙述中错误的是"><span class="toc_mobile_items-number">2.4.</span> <span class="toc_mobile_items-text"> 9. 以下叙述中错误的是（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#10-指令周期由一个到几个机器周期组成在第一个机器周期时"><span class="toc_mobile_items-number">2.5.</span> <span class="toc_mobile_items-text"> 10. 指令周期由一个到几个机器周期组成，在第一个机器周期时（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#11-由于cpu内部操作的速度较快而cpu访问依次存储器的时间过长因此机器周期通常由-来确定"><span class="toc_mobile_items-number">2.6.</span> <span class="toc_mobile_items-text"> 11. 由于CPU内部操作的速度较快，而CPU访问依次存储器的时间过长，因此机器周期通常由（ ）来确定。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#12-以下有关机器周期的叙述中错误的是"><span class="toc_mobile_items-number">2.7.</span> <span class="toc_mobile_items-text"> 12. 以下有关机器周期的叙述中，错误的是（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#13-下列说法中合理的是"><span class="toc_mobile_items-number">2.8.</span> <span class="toc_mobile_items-text"> 13. 下列说法中，合理的是（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#15-cpu响应中断的时间是"><span class="toc_mobile_items-number">2.9.</span> <span class="toc_mobile_items-text"> 15. CPU响应中断的时间是（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#16-以下叙述中错误的是"><span class="toc_mobile_items-number">2.10.</span> <span class="toc_mobile_items-text"> 16. 以下叙述中，错误的是（ ）。</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#18-下列说法中正确的是"><span class="toc_mobile_items-number">2.11.</span> <span class="toc_mobile_items-text"> 18. 下列说法中正确的是（ ）。</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#blockquote-classblockquote-center52-指令执行过程blockquote"><span class="toc-number">1.</span> <span class="toc-text"> 5.2-指令执行过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-单选"><span class="toc-number">2.</span> <span class="toc-text"> 一、单选</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#22011-假定不采用cache和指令预取技术且机器处于开中断状态则在下列有关指令执行的叙述中错误的是"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.[2011] 假定不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-采用dma方式传送数据时每传送一个数据就要占用"><span class="toc-number">2.2.</span> <span class="toc-text"> 4. 采用DMA方式传送数据时，每传送一个数据就要占用（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-指令-从主存中读出"><span class="toc-number">2.3.</span> <span class="toc-text"> 6. 指令（ ）从主存中读出。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-以下叙述中错误的是"><span class="toc-number">2.4.</span> <span class="toc-text"> 9. 以下叙述中错误的是（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-指令周期由一个到几个机器周期组成在第一个机器周期时"><span class="toc-number">2.5.</span> <span class="toc-text"> 10. 指令周期由一个到几个机器周期组成，在第一个机器周期时（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-由于cpu内部操作的速度较快而cpu访问依次存储器的时间过长因此机器周期通常由-来确定"><span class="toc-number">2.6.</span> <span class="toc-text"> 11. 由于CPU内部操作的速度较快，而CPU访问依次存储器的时间过长，因此机器周期通常由（ ）来确定。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-以下有关机器周期的叙述中错误的是"><span class="toc-number">2.7.</span> <span class="toc-text"> 12. 以下有关机器周期的叙述中，错误的是（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-下列说法中合理的是"><span class="toc-number">2.8.</span> <span class="toc-text"> 13. 下列说法中，合理的是（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-cpu响应中断的时间是"><span class="toc-number">2.9.</span> <span class="toc-text"> 15. CPU响应中断的时间是（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-以下叙述中错误的是"><span class="toc-number">2.10.</span> <span class="toc-text"> 16. 以下叙述中，错误的是（ ）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-下列说法中正确的是"><span class="toc-number">2.11.</span> <span class="toc-text"> 18. 下列说法中正确的是（ ）。</span></a></li></ol></li></ol></div></div></div><main id="content-outer"><div id="top-container" style="background-image: url(https://edsurge.imgix.net/uploads/post/image/7312/2015-1448929395.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">计算机组成原理-5-2-指令执行过程</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> Created 2020-01-19<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> Updated 2020-05-08</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/考研2020/">考研2020</a><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/考研2020/408/">408</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><span><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i>Post View:</span><span id="busuanzi_value_page_pv"></span></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h1 id="blockquote-classblockquote-center52-指令执行过程blockquote"><a class="markdownIt-Anchor" href="#blockquote-classblockquote-center52-指令执行过程blockquote"></a> <blockquote class="blockquote-center">5.2-指令执行过程</blockquote></h1>
+<a id="more"></a>
+<h1 id="一-单选"><a class="markdownIt-Anchor" href="#一-单选"></a> 一、单选</h1>
+<h2 id="22011-假定不采用cache和指令预取技术且机器处于开中断状态则在下列有关指令执行的叙述中错误的是"><a class="markdownIt-Anchor" href="#22011-假定不采用cache和指令预取技术且机器处于开中断状态则在下列有关指令执行的叙述中错误的是"></a> 2.[2011] 假定不采用Cache和指令预取技术，且机器处于“开中断”状态，则在下列有关指令执行的叙述中，错误的是（ ）。</h2>
+<p>A. 每个指令周期中CPU都至少访问内存一次<br>
+B. 每个指令周期一定大于或等于一个CPU时钟周期<br>
+C. 空操作指令的指令周期中任何寄存器的内容都不会被改变<br>
+D. 当前程序在每条指令执行结束时都可能被外部中断打断<br>
+[Analysis]<br>
+A. 不采用指令预取技术，每个指令周期都需要取指令，而不采用Cache技术，则每个取值周期都至少要访问一次内存。✔️<br>
+B. 时钟周期是CPU的最小时间单位，每个指令周期一定大于或等于一个时钟周期。✔️<br>
+C. 即使是空操作，在取指操作后，PC也会自增1。故❌<br>
+D. 由于机器处于“开中断”状态，在每条指令执行结束时都可能被外部中断打断。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">\therefore C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>❌</p>
+<h2 id="4-采用dma方式传送数据时每传送一个数据就要占用"><a class="markdownIt-Anchor" href="#4-采用dma方式传送数据时每传送一个数据就要占用"></a> 4. 采用DMA方式传送数据时，每传送一个数据就要占用（ ）。</h2>
+<p>A. 指令周期<br>
+B. 时钟周期<br>
+C. 机器周期<br>
+D. 存取周期<br>
+[Analysis]<br>
+指令周期：CPU从主存中每取出并执行一条指令所需的全部时间；<br>
+时钟周期：也称节拍或T周期，是CPU操作的最基本单位；<br>
+CPU周期：也称机器周期，一个机器周期包含若干时钟周期；<br>
+存取周期：存储器进行两次独立的存储器操作（连续两次读或写操作）所需的最小间隔时间。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">\therefore D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span>✔️</p>
+<h2 id="6-指令-从主存中读出"><a class="markdownIt-Anchor" href="#6-指令-从主存中读出"></a> 6. 指令（ ）从主存中读出。</h2>
+<p>A. 总是根据程序计数器<br>
+B. 有时根据程序计数器，有时根据转移指令<br>
+C. 根据地址寄存器<br>
+D. 有时根据程序计数器，有时根据地址寄存器<br>
+[Analysis]<br>
+程序计数器用于指出下一条指令在主存中的存放地址。执行转移指令后，也需要将目标指令地址传到程序计数器中。CPU正是根据程序计数器中的内容去主存中取指令的。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\therefore A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>✔️</p>
+<h2 id="9-以下叙述中错误的是"><a class="markdownIt-Anchor" href="#9-以下叙述中错误的是"></a> 9. 以下叙述中错误的是（ ）。</h2>
+<p>A. 指令周期的第一个操作是取指令<br>
+B. 为了进行取指操作，控制器需要得到相应的指令<br>
+C. 取指操作是控制器自动进行的<br>
+D. 指令执行时有些操作是相同或相似的<br>
+[Analysis]<br>
+取指操作是自动进行的，控制器不需要得到相应的指令。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\therefore B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>✔️</p>
+<h2 id="10-指令周期由一个到几个机器周期组成在第一个机器周期时"><a class="markdownIt-Anchor" href="#10-指令周期由一个到几个机器周期组成在第一个机器周期时"></a> 10. 指令周期由一个到几个机器周期组成，在第一个机器周期时（ ）。</h2>
+<p>A. 从主存中取出指令字<br>
+B. 从主存中取出指令操作码<br>
+C. 从主存中取出指令地址码<br>
+D. 从主存中取出指令的地址<br>
+[Analysis]<br>
+指令周期的第一个机器周期时取指周期，即从主存中取出指令字。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\therefore A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>✔️</p>
+<h2 id="11-由于cpu内部操作的速度较快而cpu访问依次存储器的时间过长因此机器周期通常由-来确定"><a class="markdownIt-Anchor" href="#11-由于cpu内部操作的速度较快而cpu访问依次存储器的时间过长因此机器周期通常由-来确定"></a> 11. 由于CPU内部操作的速度较快，而CPU访问依次存储器的时间过长，因此机器周期通常由（ ）来确定。</h2>
+<p>A. 指令周期<br>
+B. 存取周期<br>
+C. 间址周期<br>
+D. 中断周期<br>
+[Analysis]<br>
+逻辑判断。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\therefore B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>✔️</p>
+<h2 id="12-以下有关机器周期的叙述中错误的是"><a class="markdownIt-Anchor" href="#12-以下有关机器周期的叙述中错误的是"></a> 12. 以下有关机器周期的叙述中，错误的是（ ）。</h2>
+<p>A. 通常把通过一次总线事务访问一次主存或I/O的时间定为一个机器周期<br>
+B. 一个指令周期通常包含多个机器周期<br>
+C. 不同的指令周期所包含的机器周期数可能不同<br>
+D. 每个指令周期都包含一个中断响应机器周期<br>
+[Analysis]<br>
+在指令的执行周期完成后，处理器会判断是否出现中断请求，只有在出现中断请求时，才会进入中断周期。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">\therefore D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span>✔️</p>
+<h2 id="13-下列说法中合理的是"><a class="markdownIt-Anchor" href="#13-下列说法中合理的是"></a> 13. 下列说法中，合理的是（ ）。</h2>
+<p>A. 执行各条指令的机器周期数相同，各机器周期的长度均匀<br>
+B. 执行各条指令的机器周期数相同，各机器周期的长度可变<br>
+C. 执行各条指令的机器周期数可变，各机器周期的长度均匀<br>
+D. 执行各条指令的机器周期数可变，各机器周期的长度可变<br>
+[Analysis]<br>
+机器周期是指令执行中每一步操作所需要的时间。<br>
+每个机器周期（如取指、执行、存储器读写等）所需要的时钟周期可能不一样，故长度可变的好。<br>
+因为各种指令的功能不同，所以各指令执行所需的机器周期可变的好。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">\therefore D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span>✔️</p>
+<h2 id="15-cpu响应中断的时间是"><a class="markdownIt-Anchor" href="#15-cpu响应中断的时间是"></a> 15. CPU响应中断的时间是（ ）。</h2>
+<p>A. 一条指令执行结束<br>
+B. I/O设备提出中断<br>
+C. 取指周期结束<br>
+D. 指令周期结束<br>
+[Analysis]<br>
+中断周期用于响应中断。如果有中断，则在指令的执行周期之后进入中断周期。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\therefore A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>✔️</p>
+<h2 id="16-以下叙述中错误的是"><a class="markdownIt-Anchor" href="#16-以下叙述中错误的是"></a> 16. 以下叙述中，错误的是（ ）。</h2>
+<p>A. 取指操作是控制器固有的功能，不需要在操作码控制下完成<br>
+B. 所有指令的取指操作都是相同的<br>
+C. 在指令长度相同的情况下，所有指令的取指操作是相同的<br>
+D. 中短周期是在指令执行完成后出现的<br>
+[Analysis]<br>
+不同长度的指令，其取指操作可能是不同的。例如，双字指令、三字指令与单字指令的取指操作不同。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\therefore B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>✔️</p>
+<h2 id="18-下列说法中正确的是"><a class="markdownIt-Anchor" href="#18-下列说法中正确的是"></a> 18. 下列说法中正确的是（ ）。</h2>
+<p>I.  指令字长等于机器字长的前提下，取指周期等于机器周期<br>
+II. 指令字长等于存储字长的前提下，取指周期等于机器周期<br>
+III.指令字长和机器字长的长度没有任何关系<br>
+IV. 为了硬件设计方便，指令字长都和存储字长一样大<br>
+A. II,III<br>
+B. II,III,IV<br>
+C. I,III,IV<br>
+D. I,IV<br>
+[Analysis]<br>
+指令字长一般取存储字长的整数倍。如果指令字长等于存储字长的2倍，则需要两次访存，取指周期等于机器周期的2倍。<br>
+机器字长是CPU一次能处理的数据位数，与机器字长没有必然的联系。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\therefore A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>✔️</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:huangblcs@outlook.com">Polin Huang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://www.poro.cool/2020/01/19/考研2020/408/计算机组成原理-5-2-指令执行过程/">http://www.poro.cool/2020/01/19/考研2020/408/计算机组成原理-5-2-指令执行过程/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/计算机组成原理/">计算机组成原理    </a></div><div class="post_share"><div class="social-share" data-image="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付寶"><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/01/19/考研2020/408/计算机组成原理-4-3-CISC和RISC/"><img class="prev_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>计算机组成原理-4.3-CISC和RISC</span></div></a></div><div class="next-post pull_right"><a href="/2020/01/19/考研2020/408/计算机组成原理-5-3-数据通路的功能和基本结构/"><img class="next_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>计算机组成原理-5-3-数据通路的功能和基本结构</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/01/19/考研2020/408/计算机组成原理-1-1-计算机发展历程/" title="计算机组成原理-1-1-计算机发展历程"><img class="relatedPosts_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-19</div><div class="relatedPosts_title">计算机组成原理-1-1-计算机发展历程</div></div></a></div><div class="relatedPosts_item"><a href="/2020/01/19/考研2020/408/计算机组成原理-1-2-计算机系统层次结构/" title="计算机组成原理-1-2-计算机系统层次结构"><img class="relatedPosts_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-19</div><div class="relatedPosts_title">计算机组成原理-1-2-计算机系统层次结构</div></div></a></div><div class="relatedPosts_item"><a href="/2020/01/19/考研2020/408/计算机组成原理-1-3-计算机的性能指标/" title="计算机组成原理-1-3-计算机的性能指标"><img class="relatedPosts_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-19</div><div class="relatedPosts_title">计算机组成原理-1-3-计算机的性能指标</div></div></a></div><div class="relatedPosts_item"><a href="/2020/01/19/考研2020/408/计算机组成原理-2-3-浮点数的表示及运算/" title="计算机组成原理-2.3-浮点数的表示及运算"><img class="relatedPosts_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-19</div><div class="relatedPosts_title">计算机组成原理-2.3-浮点数的表示及运算</div></div></a></div><div class="relatedPosts_item"><a href="/2020/01/19/考研2020/408/计算机组成原理-2-1-数制与编码/" title="计算机组成原理-2-1-数制与编码"><img class="relatedPosts_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-19</div><div class="relatedPosts_title">计算机组成原理-2-1-数制与编码</div></div></a></div><div class="relatedPosts_item"><a href="/2020/01/19/考研2020/408/计算机组成原理-2-2-定点数的表示和运算/" title="计算机组成原理-2-2-定点数的表示和运算"><img class="relatedPosts_cover lazyload" data-src="https://files.schudio.com/ashton-sixth/images/courses/SubjectIcons/Computer_Science.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-19</div><div class="relatedPosts_title">计算机组成原理-2-2-定点数的表示和运算</div></div></a></div></div><div class="clear_both"></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By Polin Huang</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="Read Mode"></i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="Table of Contents" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async></script></body></html>

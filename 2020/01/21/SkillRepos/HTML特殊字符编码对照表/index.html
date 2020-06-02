@@ -1,0 +1,1555 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>HTML特殊字符编码对照表 | Polin &amp; Rophen's Corner</title><meta name="description" content="HTML特殊字符编码对照表"><meta name="keywords" content="知识仓库"><meta name="author" content="Polin Huang,huangblcs@outlook.com"><meta name="copyright" content="Polin Huang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="HTML特殊字符编码对照表"><meta name="twitter:description" content="HTML特殊字符编码对照表"><meta name="twitter:image" content="https://itsourcecode.com/wp-content/uploads/2015/10/html.jpg"><meta property="og:type" content="article"><meta property="og:title" content="HTML特殊字符编码对照表"><meta property="og:url" content="http://www.poro.cool/2020/01/21/SkillRepos/HTML特殊字符编码对照表/"><meta property="og:site_name" content="Polin &amp; Rophen's Corner"><meta property="og:description" content="HTML特殊字符编码对照表"><meta property="og:image" content="https://itsourcecode.com/wp-content/uploads/2015/10/html.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://www.poro.cool/2020/01/21/SkillRepos/HTML特殊字符编码对照表/"><link rel="prev" title="数据结构-排序" href="http://www.poro.cool/2020/03/19/考研2020/408/数据结构-排序/"><link rel="next" title="LaTex数学符号" href="http://www.poro.cool/2020/01/21/SkillRepos/Latex数学符号/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Polin &amp; Rophen's Corner</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> Books</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">82</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">5</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> Books</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">Catalog</div><div class="sidebar-toc__content"><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#null"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">HTML特殊字符编码对照表</span></a></li></ol></div></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">HTML特殊字符编码对照表</span></a></li></ol></div></div></div><main id="content-outer"><div id="top-container" style="background-image: url(https://www.linkedin.com/media-proxy/ext?w=1200&amp;h=675&amp;hash=awjPJ2eNLjrNfH69%2BsNRFG8v7kY%3D&amp;ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6plxVUzgUv5K_PrkC9q0RIUJDPBy-gXCWu-NKfYXDpfcXYZLSiolQUeyUIlwE6fu-oSDDoF469LcLmY4Yx3A)"><div id="post-info"><div id="post-title"><div class="posttitle">HTML特殊字符编码对照表</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> Created 2020-01-21<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> Updated 2020-05-08</time><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><span><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i>Post View:</span><span id="busuanzi_value_page_pv"></span></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><a id="more"></a>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>HTML特殊字符编码对照表</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.6">
+  <style type="text/css">
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 14.0px; font: 12.0px Times; color: #535353; -webkit-text-stroke: #535353}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #535353; -webkit-text-stroke: #535353}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    table.t1 {width: 768.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d}
+    td.td1 {width: 70.2px; background-color: #f4f4f4; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+    td.td2 {width: 87.1px; background-color: #f4f4f4; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+    td.td3 {width: 81.5px; background-color: #f4f4f4; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+    td.td4 {width: 80.5px; background-color: #f4f4f4; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+    td.td5 {width: 70.2px; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+    td.td6 {width: 87.1px; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+    td.td7 {width: 81.5px; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+    td.td8 {width: 80.5px; margin: 0.5px 0.5px 0.5px 0.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #6d6d6d #6d6d6d #6d6d6d #6d6d6d; padding: 2.0px 2.0px 2.0px 2.0px}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 28.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>HTML特殊字符编码对照表</b></span></h1>
+<table width="768.0" cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">特殊符号</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="s1">命名实体</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p3"><span class="s1">十进制编码</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">特殊符号</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p3"><span class="s1">命名实体</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p3"><span class="s1">十进制编码</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">特殊符号</span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p3"><span class="s1">命名实体</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p3"><span class="s1">十进制编码</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Α</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Alpha;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#913;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Β</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Beta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#914;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Γ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Gamma;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#915;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Δ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Delta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#916;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ε</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Epsilon;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#917;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ζ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Zeta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#918;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Η</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Eta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#919;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Θ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Theta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#920;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ι</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Iota;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#921;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Κ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Kappa;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#922;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Λ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Lambda;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#923;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Μ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Mu;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#924;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ν</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Nu;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#925;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ξ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Xi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#926;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ο</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Omicron;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#927;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Π</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Pi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#928;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ρ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Rho;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#929;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Σ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Sigma;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#931;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Τ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Tau;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#932;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Υ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Upsilon;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#933;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Φ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Phi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#934;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Χ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;Chi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#935;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ψ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Psi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#936;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">Ω</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;Omega;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#937;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">α</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;alpha;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#945;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">β</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;beta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#946;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">γ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;gamma;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#947;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">δ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;delta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#948;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ε</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;epsilon;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#949;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ζ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;zeta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#950;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">η</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;eta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#951;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">θ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;theta;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#952;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ι</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;iota;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#953;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">κ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;kappa;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#954;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">λ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;lambda;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#955;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">μ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;mu;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#956;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ν</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;nu;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#957;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ξ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;xi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#958;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ο</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;omicron;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#959;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">π</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;pi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#960;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ρ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;rho;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#961;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ς</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;sigmaf;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#962;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">σ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;sigma;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#963;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">τ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;tau;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#964;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">υ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;upsilon;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#965;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">φ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;phi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#966;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">χ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;chi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#967;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ψ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;psi;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#968;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ω</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;omega;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#969;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ϑ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;thetasym;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#977;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ϒ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;upsih;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#978;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ϖ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;piv;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#982;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">•</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;bull;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8226;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">…</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;hellip;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8230;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">′</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;prime;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8242;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">″</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;Prime;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8243;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">‾</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;oline;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8254;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⁄</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;frasl;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8260;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">℘</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;weierp;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8472;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ℑ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;image;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8465;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ℜ</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;real;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8476;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">™</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;trade;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8482;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ℵ</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;alefsym;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8501;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">←</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;larr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8592;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">↑</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;uarr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8593;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">→</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;rarr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8594;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">↓</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;darr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8595;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">↔</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;harr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8596;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">↵</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;crarr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8629;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⇐</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;lArr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8656;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⇑</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;uArr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8657;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⇒</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;rArr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8658;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⇓</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;dArr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8659;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⇔</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;hArr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8660;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∀</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;forall;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8704;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∂</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;part;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8706;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∃</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;exist;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8707;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∅</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;empty;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8709;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∇</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;nabla;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8711;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∈</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;isin;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8712;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∉</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;notin;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8713;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∋</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;ni;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8715;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∏</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;prod;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8719;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∑</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;sum;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8722;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">−</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;minus;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8722;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∗</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;lowast;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8727;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">√</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;radic;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8730;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∝</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;prop;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8733;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∞</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;infin;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8734;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∠</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;ang;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8736;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∧</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;and;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8869;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∨</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;or;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8870;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∩</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;cap;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8745;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∪</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;cup;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8746;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∫</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;int;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8747;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∴</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;there4;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8756;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">∼</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;sim;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8764;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">≅</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;cong;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8773;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">≈</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;asymp;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8773;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">≠</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;ne;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8800;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">≡</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;equiv;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8801;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">≤</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;le;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8804;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">≥</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;ge;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8805;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊂</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;sub;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8834;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊃</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;sup;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8835;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊄</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;nsub;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8836;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊆</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;sube;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8838;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊇</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;supe;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8839;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊕</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;oplus;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8853;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊗</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;otimes;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8855;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⊥</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;perp;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8869;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⋅</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;sdot;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8901;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⌈</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;lceil;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8968;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⌉</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;rceil;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8969;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⌊</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;lfloor;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8970;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">⌋</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;rfloor;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#8971;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">◊</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;loz;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#9674;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">♠</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;spades;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#9824;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">♣</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;clubs;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#9827;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">♥</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;hearts;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#9829;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">♦</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;diams;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#9830;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1"> </span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;nbsp;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#160;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¡</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;iexcl;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#161;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¢</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;cent;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#162;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">£</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;pound;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#163;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¤</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;curren;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#164;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¥</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;yen;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#165;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¦</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;brvbar;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#166;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">§</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;sect;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#167;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¨</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;uml;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#168;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">©</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;copy;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#169;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">ª</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;ordf;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#170;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">«</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;laquo;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#171;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¬</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;not;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#172;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">­</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;shy;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#173;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">®</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;reg;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#174;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">¯</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;macr;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#175;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">°</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;deg;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#176;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">±</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;plusmn;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#177;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">²</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;sup2;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#178;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">³</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;sup3;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#179;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">´</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;acute;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#180;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">µ</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;micro;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#181</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">"</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1">&amp;quot;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#34;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">&lt;</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p3"><span class="s1">&amp;lt;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#60;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">&gt;</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p3"><span class="s1">&amp;gt;</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#62;</span></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2"><span class="s1">'</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p3"><span class="s1"> </span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p3"><span class="s1">&amp;#39;</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:huangblcs@outlook.com">Polin Huang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://www.poro.cool/2020/01/21/SkillRepos/HTML特殊字符编码对照表/">http://www.poro.cool/2020/01/21/SkillRepos/HTML特殊字符编码对照表/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/知识仓库/">知识仓库    </a></div><div class="post_share"><div class="social-share" data-image="https://itsourcecode.com/wp-content/uploads/2015/10/html.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付寶"><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/03/19/考研2020/408/数据结构-排序/"><img class="prev_cover lazyload" data-src="http://cppbetterexplained.com/wp-content/uploads/2016/02/binary-search-tree-deletion-two-child.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>数据结构-排序</span></div></a></div><div class="next-post pull_right"><a href="/2020/01/21/SkillRepos/Latex数学符号/"><img class="next_cover lazyload" data-src="https://news.schoolsdo.org/wp-content/uploads/2016/02/algebra_geometry_chalk.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>LaTex数学符号</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/05/23/SkillRepos/Configuration4CentOS8(Docker)/" title="Configuration4CentOS8(Docker)"><img class="relatedPosts_cover lazyload"data-src="https://blog.rimuhosting.com/wp-content/uploads/2014/07/centos_logo.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-05-23</div><div class="relatedPosts_title">Configuration4CentOS8(Docker)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/05/05/SkillRepos/C语言程序设计/" title="C语言程序设计"><img class="relatedPosts_cover lazyload"data-src="https://cdn.dribbble.com/users/269297/screenshots/2512084/cdribbble.gif"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-05-05</div><div class="relatedPosts_title">C语言程序设计</div></div></a></div><div class="relatedPosts_item"><a href="/2020/05/05/SkillRepos/C++STL/" title="C++STL"><img class="relatedPosts_cover lazyload"data-src="https://cdn.dribbble.com/users/269297/screenshots/2512084/cdribbble.gif"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-05-05</div><div class="relatedPosts_title">C++STL</div></div></a></div><div class="relatedPosts_item"><a href="/2020/01/21/SkillRepos/Latex数学符号/" title="LaTex数学符号"><img class="relatedPosts_cover lazyload"data-src="https://news.schoolsdo.org/wp-content/uploads/2016/02/algebra_geometry_chalk.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-21</div><div class="relatedPosts_title">LaTex数学符号</div></div></a></div><div class="relatedPosts_item"><a href="/2020/05/18/SkillRepos/Note4MySQL/" title="Note4MySQL"><img class="relatedPosts_cover lazyload"data-src="https://www.percona.com/blog/wp-content/uploads/2018/04/Mysql-dolphin-square.svg.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-05-18</div><div class="relatedPosts_title">Note4MySQL</div></div></a></div></div><div class="clear_both"></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By Polin Huang</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="Read Mode"></i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="Table of Contents" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
