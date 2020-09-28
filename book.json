@@ -1,0 +1,18 @@
+{
+  "title": "Polin & Rophen Corner",
+  "author": "Polin Huang",
+  "root": ".",
+  "language": "en",
+  "plugins": [
+    "-lunr",
+    "-search",
+    "search-pro",
+    "-highlight",
+    "prism",
+    "prism-themes",
+    "splitter",
+    "emphasize",
+    "back-to-top-button",
+    "chapter-fold"
+  ]
+}
